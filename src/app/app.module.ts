@@ -8,6 +8,7 @@ import { Graph1Component } from './graph1/graph1.component';
 import { NgxWorkflowComponent } from './ngx-graph/ngx-workflow/ngx-workflow.component';
 import { NgxGraphOrgTreeComponent } from './ngx-graph-org-tree/ngx-graph-org-tree.component';
 import { NodePropertiesComponent } from './node-properties/node-properties.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,15 +16,17 @@ import { NodePropertiesComponent } from './node-properties/node-properties.compo
     Graph1Component,
     NgxWorkflowComponent,
     NgxGraphOrgTreeComponent,
-    NodePropertiesComponent
+    NodePropertiesComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxGraphModule,
+    BrowserAnimationsModule,
   ],
-  exports: [ NgxGraphOrgTreeComponent,NodePropertiesComponent]
+  exports: [NgxWorkflowComponent, NgxGraphOrgTreeComponent,NodePropertiesComponent]
 ,
   providers: [],
   bootstrap: [AppComponent]

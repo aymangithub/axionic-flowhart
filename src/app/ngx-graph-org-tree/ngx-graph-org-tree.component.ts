@@ -31,7 +31,7 @@ export class NgxGraphOrgTreeComponent implements OnInit {
   selectedNode: Node;
   sourceNode: Node;
   isSourceNodeSelect: boolean = false;
-  currentNodeId: number = 6;
+  currentNodeId: number = 1;
   constructor() {
     this.employees = [
       {
