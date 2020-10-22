@@ -1,0 +1,66 @@
+<!-- <nav class="menu" tabindex="0">
+  <div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+    <h2>Flowchart</h2>
+  </header>
+  <ul>
+    <li tabindex="0" class="icon-dashboard"><button onclick="alert(2)">user input</button></li>
+    <li tabindex="0" class="icon-dashboard"><button (click)="addnode()">Play Number</button></li>
+    <li tabindex="0" class="icon-users"><span>Users</span></li>
+    <li tabindex="0" class="icon-settings"><span>Selected Node: {{selectedNode| json}}</span></li>
+  </ul>
+</nav> -->
+<div class="row">
+  <div class="col-3">
+    <nav class="menu" tabindex="0">
+      <div class="smartphone-menu-trigger"></div>
+      <header class="avatar">
+        <h2>Flowchart</h2>
+      </header>
+      <ul>
+        <li tabindex="0" class="icon-dashboard"><button (click)="addStartNode()">Add start node</button></li>
+
+        <li tabindex="0" class="icon-dashboard"><button (click)="addnode()">user input</button></li>
+        <li tabindex="0" class="icon-dashboard"><button (click)="addnode()">Play Number</button></li>
+        <li tabindex="0" class="icon-settings"><span>Selected Node: {{selectedNode| json}}</span></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-7">
+    <main>
+
+      <div class="helper">
+
+
+
+        <ngx-graph class="chart-container" [view]="[800, 600]" [showMiniMap]="true" [links]=links [nodes]=nodes>
+          <ng-template #nodeTemplate let-node>
+            <svg:g class="node" xmlns="http://www.w3.org/2000/xhtml" width="150" height="100">
+              <svg:foreignObject width="150" height="100">
+                <xhtml:div (click)="nodeclicked(node)" class="cardContainer" xmlns="http://www.w3.org/1999/xhtml"
+                  [ngStyle]="getStyles(node)">
+                  <label class="name">{{ node.label }}</label>
+                  <label>{{ node.data.role }}</label>
+                  <label>{{ node.data.office }}</label>
+                </xhtml:div>
+
+              </svg:foreignObject>
+            </svg:g>
+          </ng-template>
+
+
+
+        </ngx-graph>
+
+
+
+      </div>
+
+    </main>
+  </div>
+  <div class="col-2">
+    <span>Selected Node Properties</span>
+    <input  placeholder="Node Name"   [value]="selectedNode == null ? '' :selectedNode.label ">
+    <button class="btn-primary margin">Save</button>
+  </div>
+</div>

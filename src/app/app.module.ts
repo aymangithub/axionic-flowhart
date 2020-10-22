@@ -3,15 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { Graph1Component } from './graph1/graph1.component';
+import { NgxWorkflowComponent } from './ngx-graph/ngx-workflow/ngx-workflow.component';
+import { NgxGraphOrgTreeComponent } from './ngx-graph-org-tree/ngx-graph-org-tree.component';
+import { NodePropertiesComponent } from './node-properties/node-properties.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Graph1Component,
+    NgxWorkflowComponent,
+    NgxGraphOrgTreeComponent,
+    NodePropertiesComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxGraphModule,
   ],
+  exports: [ NgxGraphOrgTreeComponent,NodePropertiesComponent]
+,
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,17 @@
+<br>
+<div class="container-fluid mr-5" style="background-color: beige;">
+    <h2 class="center">Node Properties Panel</h2>
+    <label for="nodeLabel">Node Label</label>
+    <input id="nodeLabel" class="form-control" type="text" [value]="node?.label"
+        (input)="onLabelChange($event.target.value)">
+
+
+    <ng-container *ngIf="isPlayNumber(node)">
+        <label for="nodeLabel">Play Number Mp3 file path</label><br>
+        <span>{{node.mp3FilePath}}</span>
+        <input id="nodeLabel" class="form-control" type="file" [value]="node?.mp3FilePath"
+            (input)="onLabelChange($event.target.value)">
+
+    </ng-container>
+    <br>
+</div>
